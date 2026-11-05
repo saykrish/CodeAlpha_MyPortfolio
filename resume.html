@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume - Dileep Kumar | dileep.dev</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #4f46e5;
+            --primary-dark: #3730a3;
+            --secondary: #0891b2;
+            --text-dark: #1e293b;
+            --text-muted: #64748b;
+            --bg-light: #f8fafc;
+            --border: #e2e8f0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: var(--text-dark);
+            background-color: #f1f5f9;
+            padding: 2rem 1rem;
+            line-height: 1.5;
+        }
+
+        .resume-action-bar {
+            max-width: 820px;
+            margin: 0 auto 1.5rem auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .back-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        .btn-print {
+            background: var(--primary);
+            color: #ffffff;
+            border: none;
+            padding: 0.65rem 1.3rem;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.25);
+            transition: all 0.2s ease;
+        }
+
+        .btn-print:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .resume-page {
+            max-width: 820px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            padding: 3rem;
+            border: 1px solid var(--border);
+        }
+
+        /* Header */
+        .resume-header {
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 1.8rem;
+            margin-bottom: 1.8rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        .name-title h1 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #0f172a;
+            letter-spacing: -0.5px;
+        }
+
+        .name-title h2 {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-top: 0.2rem;
+        }
+
+        .name-title .sub-info {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-top: 0.3rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+            font-size: 0.9rem;
+            text-align: right;
+        }
+
+        .contact-info a, .contact-info span {
+            color: var(--text-dark);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 0.45rem;
+        }
+
+        .contact-info a:hover {
+            color: var(--primary);
+            text-decoration: underline;
+        }
+
+        .contact-info i {
+            color: var(--primary);
+            width: 16px;
+        }
+
+        /* Sections */
+        .section {
+            margin-bottom: 1.6rem;
+        }
+
+        .section-heading {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #0f172a;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            border-bottom: 1.5px solid var(--border);
+            padding-bottom: 0.35rem;
+            margin-bottom: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .section-heading i {
+            color: var(--primary);
+            font-size: 0.95rem;
+        }
+
+        .summary-text {
+            color: #334155;
+            font-size: 0.93rem;
+            line-height: 1.65;
+        }
+
+        /* Education & Projects Items */
+        .item {
+            margin-bottom: 1.25rem;
+        }
+
+        .item-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+        }
+
+        .item-title {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #0f172a;
+        }
+
+        .item-title a {
+            color: #0f172a;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+        }
+
+        .item-title a:hover {
+            color: var(--primary);
+            text-decoration: underline;
+        }
+
+        .item-link-badge {
+            font-size: 0.78rem;
+            color: var(--primary);
+            font-weight: 600;
+            text-decoration: none;
+            background: rgba(79, 70, 229, 0.08);
+            padding: 0.15rem 0.5rem;
+            border-radius: 4px;
+        }
+
+        .item-link-badge:hover {
+            background: var(--primary);
+            color: #ffffff;
+        }
+
+        .item-date {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .item-desc {
+            font-size: 0.88rem;
+            color: #475569;
+            margin-top: 0.35rem;
+            line-height: 1.55;
+        }
+
+        .item-bullets {
+            list-style: disc;
+            margin-left: 1.25rem;
+            margin-top: 0.4rem;
+            font-size: 0.88rem;
+            color: #475569;
+        }
+
+        .item-bullets li {
+            margin-bottom: 0.3rem;
+        }
+
+        /* Core Skills Grid (Only the 6 requested skills) */
+        .skills-grid-core {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.8rem;
+        }
+
+        .skill-box-core {
+            background: var(--bg-light);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 0.85rem 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: #0f172a;
+        }
+
+        .skill-box-core i {
+            color: var(--primary);
+            font-size: 1.1rem;
+            width: 20px;
+        }
+
+        /* Print Media Styles */
+        @media print {
+            body {
+                background: #ffffff;
+                padding: 0;
+            }
+
+            .resume-action-bar {
+                display: none;
+            }
+
+            .resume-page {
+                box-shadow: none;
+                border: none;
+                padding: 0;
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 650px) {
+            .resume-page {
+                padding: 1.5rem;
+            }
+
+            .resume-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .contact-info {
+                text-align: left;
+            }
+
+            .contact-info a, .contact-info span {
+                justify-content: flex-start;
+            }
+
+            .skills-grid-core {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="resume-action-bar">
+        <a href="../index.html" class="back-link">
+            <i class="fa-solid fa-arrow-left"></i> Back to dileep.dev
+        </a>
+        <button class="btn-print" onclick="window.print()">
+            <i class="fa-solid fa-print"></i> Print / Save as PDF
+        </button>
+    </div>
+
+    <div class="resume-page">
+        <!-- HEADER -->
+        <header class="resume-header">
+            <div class="name-title">
+                <h1>Dileep Kumar</h1>
+                <h2>Frontend Developer &amp; UI/UX Designer</h2>
+                <div class="sub-info">dileep.dev &bull; B.Tech in Computer Science and Engineering</div>
+            </div>
+            <div class="contact-info">
+                <a href="mailto:featdilip@gmail.com"><i class="fa-solid fa-envelope"></i> featdilip@gmail.com</a>
+                <a href="https://github.com/saykrish" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> github.com/saykrish</a>
+                <a href="../index.html"><i class="fa-solid fa-globe"></i> dileep.dev</a>
+                <span><i class="fa-solid fa-earth-americas"></i> India (Open for Remote)</span>
+            </div>
+        </header>
+
+        <!-- PROFESSIONAL SUMMARY -->
+        <section class="section">
+            <h3 class="section-heading"><i class="fa-solid fa-user"></i> Professional Summary</h3>
+            <p class="summary-text">
+                Motivated Computer Science &amp; Engineering undergraduate with dedicated expertise in 
+                <strong>HTML, CSS, JavaScript, C Programming, UI/UX Designing, and Web Development</strong>. 
+                Proven track record developing and deploying live web projects including <strong>KrishAI</strong>, 
+                <strong>Snapshot</strong>, and <strong>Calculator</strong>. Passionate about building modern, accessible, 
+                and responsive web applications at <strong>dileep.dev</strong>.
+            </p>
+        </section>
+
+        <!-- EDUCATION -->
+        <section class="section">
+            <h3 class="section-heading"><i class="fa-solid fa-graduation-cap"></i> Education</h3>
+            <div class="item">
+                <div class="item-head">
+                    <span class="item-title">Bachelor of Technology (B.Tech) - Computer Science &amp; Engineering</span>
+                    <span class="item-date">Currently Pursuing</span>
+                </div>
+                <div class="item-desc">
+                    Core Coursework: C Programming, Data Structures &amp; Algorithms, Object-Oriented Principles, Web Technologies, Database Systems, Software Engineering.
+                </div>
+            </div>
+        </section>
+
+        <!-- TECHNICAL SKILLS (Strictly the 6 specified skills) -->
+        <section class="section">
+            <h3 class="section-heading"><i class="fa-solid fa-code"></i> Core Skills</h3>
+            <div class="skills-grid-core">
+                <div class="skill-box-core">
+                    <i class="fa-brands fa-html5"></i>
+                    <span>HTML</span>
+                </div>
+                <div class="skill-box-core">
+                    <i class="fa-brands fa-css3-alt"></i>
+                    <span>CSS</span>
+                </div>
+                <div class="skill-box-core">
+                    <i class="fa-brands fa-js"></i>
+                    <span>JavaScript</span>
+                </div>
+                <div class="skill-box-core">
+                    <i class="fa-solid fa-microchip"></i>
+                    <span>C Programming</span>
+                </div>
+                <div class="skill-box-core">
+                    <i class="fa-solid fa-bezier-curve"></i>
+                    <span>UI/UX Designing</span>
+                </div>
+                <div class="skill-box-core">
+                    <i class="fa-solid fa-laptop-code"></i>
+                    <span>Web Development</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECTS (Strictly KrishAI, Snapshot, Calculator with Live Clickable Links) -->
+        <section class="section">
+            <h3 class="section-heading"><i class="fa-solid fa-laptop-code"></i> Featured Projects</h3>
+
+            <!-- 1. KrishAI -->
+            <div class="item">
+                <div class="item-head">
+                    <span class="item-title">
+                        <a href="https://krishai-ppmmuept.manus.space/" target="_blank" rel="noopener noreferrer">
+                            KrishAI &bull; AI Chatbot Web Application <i class="fa-solid fa-arrow-up-right-from-square" style="font-size:0.75rem;"></i>
+                        </a>
+                    </span>
+                    <a href="https://krishai-ppmmuept.manus.space/" target="_blank" rel="noopener noreferrer" class="item-link-badge">
+                        Live Demo
+                    </a>
+                </div>
+                <ul class="item-bullets">
+                    <li>Developed an intelligent conversational AI chatbot interface featuring real-time response generation and message history.</li>
+                    <li>Designed responsive chat bubbles with typing animations and quick suggested prompt pills using HTML, CSS, and JavaScript.</li>
+                    <li>Live deployment: <a href="https://krishai-ppmmuept.manus.space/" target="_blank" rel="noopener noreferrer" style="color:var(--primary);">krishai-ppmmuept.manus.space</a></li>
+                </ul>
+            </div>
+
+            <!-- 2. Snapshot -->
+            <div class="item">
+                <div class="item-head">
+                    <span class="item-title">
+                        <a href="https://saykrish.github.io/CodeAlpha_ImageGallery/" target="_blank" rel="noopener noreferrer">
+                            Snapshot &bull; Responsive Image Gallery <i class="fa-solid fa-arrow-up-right-from-square" style="font-size:0.75rem;"></i>
+                        </a>
+                    </span>
+                    <a href="https://saykrish.github.io/CodeAlpha_ImageGallery/" target="_blank" rel="noopener noreferrer" class="item-link-badge">
+                        Live Demo
+                    </a>
+                </div>
+                <ul class="item-bullets">
+                    <li>Designed and constructed a modern photo showcase application with interactive category filters and hover effects.</li>
+                    <li>Implemented full-screen lightbox modal previews with smooth image zooming and transition effects using HTML, CSS, and JS.</li>
+                    <li>Live deployment: <a href="https://saykrish.github.io/CodeAlpha_ImageGallery/" target="_blank" rel="noopener noreferrer" style="color:var(--primary);">saykrish.github.io/CodeAlpha_ImageGallery</a></li>
+                </ul>
+            </div>
+
+            <!-- 3. Calculator -->
+            <div class="item">
+                <div class="item-head">
+                    <span class="item-title">
+                        <a href="https://saykrish.github.io/Codealpha_Calculator/" target="_blank" rel="noopener noreferrer">
+                            Calculator &bull; Interactive Web Calculator <i class="fa-solid fa-arrow-up-right-from-square" style="font-size:0.75rem;"></i>
+                        </a>
+                    </span>
+                    <a href="https://saykrish.github.io/Codealpha_Calculator/" target="_blank" rel="noopener noreferrer" class="item-link-badge">
+                        Live Demo
+                    </a>
+                </div>
+                <ul class="item-bullets">
+                    <li>Built a digital calculator supporting fundamental arithmetic calculations, decimal precision, and tactile button micro-interactions.</li>
+                    <li>Engineered responsive keypad layouts with error handling for invalid operations and division by zero.</li>
+                    <li>Live deployment: <a href="https://saykrish.github.io/Codealpha_Calculator/" target="_blank" rel="noopener noreferrer" style="color:var(--primary);">saykrish.github.io/Codealpha_Calculator</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- INTERNSHIP & PRACTICAL EXPERIENCE -->
+        <section class="section">
+            <h3 class="section-heading"><i class="fa-solid fa-briefcase"></i> Experience &amp; Internships</h3>
+            <div class="item">
+                <div class="item-head">
+                    <span class="item-title">Web Development Intern</span>
+                    <span class="item-date">CodeAlpha</span>
+                </div>
+                <ul class="item-bullets">
+                    <li>Engineered responsive web applications focusing on clean design, modular code, and cross-browser support.</li>
+                    <li>Implemented interactive web tools including KrishAI, Snapshot, and Calculator with active GitHub repositories.</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+
+</body>
+</html>
