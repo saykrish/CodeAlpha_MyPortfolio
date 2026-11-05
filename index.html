@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dileep.dev | Dileep Kumar - Frontend Developer &amp; UI/UX Designer</title>
+    <meta name="description" content="dileep.dev - Portfolio of Dileep Kumar. Frontend Developer &amp; UI/UX Designer specializing in HTML, CSS, JavaScript, C Programming, UI/UX Designing, and Web Development.">
+    <meta name="keywords" content="dileep.dev, Dileep Kumar, saykrish, KrishAI, Snapshot, Calculator, HTML, CSS, JavaScript, C Programming, UI/UX Designing, Web Development">
+    <meta name="author" content="Dileep Kumar">
+
+    <!-- Open Graph / Meta for Social Media -->
+    <meta property="og:title" content="dileep.dev | Dileep Kumar - Portfolio">
+    <meta property="og:description" content="Explore the portfolio of Dileep Kumar (dileep.dev) - Showcasing KrishAI, Snapshot, Calculator, and core web development skills.">
+    <meta property="og:type" content="website">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Notification Toast -->
+    <div id="toast" class="toast" role="alert" aria-live="polite">
+        <div class="toast-icon"><i class="fa-solid fa-circle-check"></i></div>
+        <div class="toast-message" id="toast-message">Notification message here</div>
+    </div>
+
+    <!-- Navigation Header -->
+    <header class="navbar" id="navbar">
+        <div class="container nav-container">
+            
+            <!-- Modern Professional dileep.dev Branding -->
+            <a href="#home" class="brand-logo" aria-label="dileep.dev home">
+                <div class="logo-icon-pill">
+                    <i class="fa-solid fa-code"></i>
+                </div>
+                <div class="logo-text-box">
+                    <span class="brand-title">dileep<span class="logo-dot">.</span><span class="logo-ext">dev</span></span>
+                </div>
+            </a>
+
+            <!-- Desktop Menu -->
+            <nav class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="#home" class="nav-link active"><i class="fa-solid fa-house"></i> Home</a></li>
+                    <li class="nav-item"><a href="#about" class="nav-link"><i class="fa-solid fa-user"></i> About</a></li>
+                    <li class="nav-item"><a href="#skills" class="nav-link"><i class="fa-solid fa-code"></i> Skills</a></li>
+                    <li class="nav-item"><a href="#projects" class="nav-link"><i class="fa-solid fa-laptop-code"></i> Projects</a></li>
+                    <li class="nav-item"><a href="#services" class="nav-link"><i class="fa-solid fa-shapes"></i> Services</a></li>
+                    <li class="nav-item"><a href="#contact" class="nav-link"><i class="fa-solid fa-paper-plane"></i> Contact</a></li>
+                </ul>
+            </nav>
+
+            <!-- Actions: 3-Option Theme Switcher, Resume & Hamburger -->
+            <div class="nav-actions">
+                
+                <!-- 3-Theme Segmented Switcher (Dark, Light, Peach) -->
+                <div class="theme-switcher-group" role="group" aria-label="Theme mode switcher">
+                    <button class="theme-option-btn active" data-theme-val="dark" title="Dark Mode" aria-label="Activate Dark Theme">
+                        <i class="fa-solid fa-moon"></i>
+                        <span class="theme-label">Dark</span>
+                    </button>
+                    <button class="theme-option-btn" data-theme-val="light" title="Light Mode" aria-label="Activate Light Theme">
+                        <i class="fa-solid fa-sun"></i>
+                        <span class="theme-label">Light</span>
+                    </button>
+                    <button class="theme-option-btn" data-theme-val="peach" title="Peach Mode" aria-label="Activate Peach Theme">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                        <span class="theme-label">Peach</span>
+                    </button>
+                </div>
+
+                <a href="assets/resume.html" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm nav-cv-btn">
+                    <i class="fa-solid fa-file-arrow-down"></i> <span>Resume</span>
+                </a>
+
+                <button class="hamburger" id="hamburger" aria-label="Toggle Navigation Menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO SECTION -->
+        <section class="hero" id="home">
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <div class="hero-badge">
+                        <span class="pulse-dot"></span>
+                        <span>Available for Opportunities &amp; Internships</span>
+                    </div>
+
+                    <h1 class="hero-title">
+                        Hello, I'm <br>
+                        <span class="gradient-text">Dileep Kumar</span>
+                    </h1>
+
+                    <div class="hero-subtitle-wrapper">
+                        <span class="static-txt">I am a </span>
+                        <span class="dynamic-txt" id="typewriter"></span>
+                        <span class="cursor">|</span>
+                    </div>
+
+                    <p class="hero-description">
+                        B.Tech Computer Science &amp; Engineering student specializing in 
+                        <strong>HTML, CSS, JavaScript, C Programming, UI/UX Designing, and Web Development</strong>. 
+                        Engineering responsive, accessible, and high-performance digital solutions at <strong>dileep.dev</strong>.
+                    </p>
+
+                    <div class="hero-buttons">
+                        <a href="#projects" class="btn btn-primary">
+                            <span>View Projects</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                        <a href="#contact" class="btn btn-outline">
+                            <i class="fa-solid fa-envelope"></i>
+                            <span>Get in Touch</span>
+                        </a>
+                        <a href="https://github.com/saykrish" target="_blank" rel="noopener noreferrer" class="btn btn-glass">
+                            <i class="fa-brands fa-github"></i>
+                            <span>GitHub</span>
+                        </a>
+                        <a href="assets/resume.html" target="_blank" rel="noopener noreferrer" class="btn btn-glass">
+                            <i class="fa-solid fa-file-pdf"></i>
+                            <span>Resume</span>
+                        </a>
+                    </div>
+
+                    <div class="hero-socials">
+                        <span class="social-label">Connect:</span>
+                        <div class="social-links">
+                            <a href="mailto:featdilip@gmail.com" class="social-link" title="Send Email to featdilip@gmail.com" aria-label="Email">
+                                <i class="fa-solid fa-envelope"></i>
+                            </a>
+                            <a href="https://github.com/saykrish" target="_blank" rel="noopener noreferrer" class="social-link" title="GitHub Profile: saykrish" aria-label="GitHub">
+                                <i class="fa-brands fa-github"></i>
+                            </a>
+                            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-link" title="LinkedIn Profile" aria-label="LinkedIn">
+                                <i class="fa-brands fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Graphic / Interactive Card -->
+                <div class="hero-visual">
+                    <div class="profile-card-wrapper">
+                        <!-- Ambient Glow Backdrop -->
+                        <div class="ambient-glow"></div>
+
+                        <!-- Card UI -->
+                        <div class="profile-card">
+                            <div class="card-header-bar">
+                                <div class="window-dots">
+                                    <span class="dot dot-red"></span>
+                                    <span class="dot dot-yellow"></span>
+                                    <span class="dot dot-green"></span>
+                                </div>
+                                <span class="card-title-tag">dileep_dev.c</span>
+                            </div>
+
+                            <div class="card-avatar-box">
+                                <div class="avatar-ring">
+                                    <div class="avatar-inner">
+                                        <i class="fa-solid fa-user-astronaut avatar-icon"></i>
+                                    </div>
+                                </div>
+                                <div class="avatar-badge">
+                                    <i class="fa-solid fa-code"></i>
+                                </div>
+                            </div>
+
+                            <div class="card-code-preview">
+                                <div class="code-line"><span class="code-keyword">struct</span> <span class="code-variable">Developer</span> {</div>
+                                <div class="code-line indent-1"><span class="code-prop">brand:</span> <span class="code-string">"dileep.dev"</span>;</div>
+                                <div class="code-line indent-1"><span class="code-prop">name:</span> <span class="code-string">"Dileep Kumar"</span>;</div>
+                                <div class="code-line indent-1"><span class="code-prop">github:</span> <a href="https://github.com/saykrish" target="_blank" rel="noopener noreferrer" class="code-link">"saykrish"</a>;</div>
+                                <div class="code-line indent-1"><span class="code-prop">skills:</span> <span class="code-string">"HTML, CSS, JS, C"</span>;</div>
+                                <div class="code-line indent-1"><span class="code-prop">focus:</span> <span class="code-string">"UI/UX &amp; Web Dev"</span>;</div>
+                                <div class="code-line">};</div>
+                            </div>
+
+                            <div class="card-stats-grid">
+                                <div class="stat-item">
+                                    <span class="stat-num">3</span>
+                                    <span class="stat-label">Live Apps</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-num">6</span>
+                                    <span class="stat-label">Core Skills</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-num">B.Tech</span>
+                                    <span class="stat-label">CSE Student</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Floating Tech Badges (Core Skills Only) -->
+                        <div class="floating-badge badge-c">
+                            <i class="fa-solid fa-microchip"></i>
+                            <span>C Programming</span>
+                        </div>
+                        <div class="floating-badge badge-html">
+                            <i class="fa-brands fa-html5"></i>
+                            <span>HTML</span>
+                        </div>
+                        <div class="floating-badge badge-css">
+                            <i class="fa-brands fa-css3-alt"></i>
+                            <span>CSS</span>
+                        </div>
+                        <div class="floating-badge badge-js">
+                            <i class="fa-brands fa-js"></i>
+                            <span>JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="scroll-down-indicator">
+                <a href="#about" aria-label="Scroll to About section">
+                    <span>Scroll Down</span>
+                    <i class="fa-solid fa-angles-down"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- ABOUT SECTION -->
+        <section class="section about" id="about">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag"><i class="fa-solid fa-address-card"></i> Know Me Better</span>
+                    <h2 class="section-title">About <span class="gradient-text">Me</span></h2>
+                    <p class="section-subtitle">Bridging Computer Science fundamentals with modern Web Development &amp; UI/UX Design</p>
+                </div>
+
+                <div class="about-grid">
+                    <div class="about-bio">
+                        <div class="bio-card">
+                            <h3 class="bio-heading">
+                                Hello! I'm <span class="highlight">Dileep Kumar</span>, creator of <span class="highlight">dileep.dev</span>.
+                            </h3>
+                            <p class="bio-paragraph">
+                                I am currently pursuing my <strong>B.Tech in Computer Science and Engineering</strong>. 
+                                My focus is centered on mastering essential web and software engineering skills: 
+                                <strong>HTML, CSS, JavaScript, C Programming, UI/UX Designing, and Web Development</strong>.
+                            </p>
+                            <p class="bio-paragraph">
+                                Through hands-on projects like <strong>KrishAI</strong>, <strong>Snapshot</strong>, and <strong>Calculator</strong>, 
+                                I bring ideas to life with responsive design, intuitive interfaces, and clean, efficient code. 
+                                Check out my open-source work on GitHub at <a href="https://github.com/saykrish" target="_blank" rel="noopener noreferrer" class="text-link">github.com/saykrish</a>.
+                            </p>
+
+                            <div class="about-focus-points">
+                                <div class="focus-item">
+                                    <div class="focus-icon"><i class="fa-solid fa-layer-group"></i></div>
+                                    <div>
+                                        <h4>UI/UX Designing</h4>
+                                        <p>Designing user-friendly interfaces, visual hierarchies, and modern layouts.</p>
+                                    </div>
+                                </div>
+                                <div class="focus-item">
+                                    <div class="focus-icon"><i class="fa-solid fa-code"></i></div>
+                                    <div>
+                                        <h4>Web Development</h4>
+                                        <p>Developing clean, responsive, and cross-browser web pages using HTML, CSS, and JavaScript.</p>
+                                    </div>
+                                </div>
+                                <div class="focus-item">
+                                    <div class="focus-icon"><i class="fa-solid fa-terminal"></i></div>
+                                    <div>
+                                        <h4>C Programming &amp; Logic</h4>
+                                        <p>Writing structured, efficient C code and strengthening algorithmic problem solving.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="about-details">
+                        <!-- Quick Info Table / Cards -->
+                        <div class="info-card">
+                            <h4 class="info-card-title"><i class="fa-solid fa-id-badge"></i> Quick Information</h4>
+                            <ul class="info-list">
+                                <li>
+                                    <span class="info-key"><i class="fa-solid fa-user"></i> Name:</span>
+                                    <span class="info-val">Dileep Kumar</span>
+                                </li>
+                                <li>
+                                    <span class="info-key"><i class="fa-solid fa-globe"></i> Website:</span>
+                                    <span class="info-val"><a href="#home">dileep.dev</a></span>
+                                </li>
+                                <li>
+                                    <span class="info-key"><i class="fa-brands fa-github"></i> GitHub:</span>
+                                    <span class="info-val"><a href="https://github.com/saykrish" target="_blank" rel="noopener noreferrer">github.com/saykrish</a></span>
+                                </li>
+                                <li>
+                                    <span class="info-key"><i class="fa-solid fa-envelope"></i> Email:</span>
+                                    <span class="info-val email-val">
+                                        <a href="mailto:featdilip@gmail.com">featdilip@gmail.com</a>
+                                        <button class="copy-btn" data-copy="featdilip@gmail.com" title="Copy Email">
+                                            <i class="fa-regular fa-copy"></i>
+                                        </button>
+                                    </span>
+                                </li>
+                                <li>
+                                    <span class="info-key"><i class="fa-solid fa-graduation-cap"></i> Education:</span>
+                                    <span class="info-val">B.Tech Computer Science &amp; Engineering</span>
+                                </li>
+                                <li>
+                                    <span class="info-key"><i class="fa-solid fa-location-dot"></i> Location:</span>
+                                    <span class="info-val">India (Open for Remote)</span>
+                                </li>
+                                <li>
+                                    <span class="info-key"><i class="fa-solid fa-circle-check"></i> Status:</span>
+                                    <span class="info-val highlight-green">Available for Projects &amp; Internships</span>
+                                </li>
+                            </ul>
+
+                            <div class="info-card-actions">
+                                <a href="assets/resume.html" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-block">
+                                    <i class="fa-solid fa-download"></i> View / Download Resume
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Education Timeline Card -->
+                        <div class="timeline-card">
+                            <h4 class="info-card-title"><i class="fa-solid fa-clock-rotate-left"></i> Academic Background</h4>
+                            <div class="timeline">
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-content">
+                                        <span class="timeline-badge">Currently Pursuing</span>
+                                        <h5>Bachelor of Technology (B.Tech)</h5>
+                                        <p class="timeline-sub">Computer Science and Engineering (CSE)</p>
+                                        <p class="timeline-desc">
+                                            Focusing on C Programming, Data Structures, Algorithms, 
+                                            Web Development, and Software Engineering principles.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SKILLS SECTION (Only HTML, CSS, C Programming, JavaScript, UI/UX Designing, Web Development) -->
+        <section class="section skills" id="skills">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag"><i class="fa-solid fa-code"></i> Technical Stack</span>
+                    <h2 class="section-title">My <span class="gradient-text">Skills</span></h2>
+                    <p class="section-subtitle">The core skills I specialize in for design, development, and programming</p>
+                </div>
+
+                <div class="skills-grid-six">
+                    
+                    <!-- 1. HTML -->
+                    <div class="core-skill-card">
+                        <div class="skill-card-top">
+                            <div class="skill-icon-wrap html-icon-wrap">
+                                <i class="fa-brands fa-html5"></i>
+                            </div>
+                            <div class="skill-meta">
+                                <h3>HTML</h3>
+                                <span class="skill-badge-level">Advanced</span>
+                            </div>
+                        </div>
+                        <p class="skill-card-desc">
+                            Semantic markup, modern HTML5 elements, document structure, accessibility, and SEO-friendly foundations.
+                        </p>
+                        <div class="skill-bar-wrap">
+                            <div class="skill-bar-info">
+                                <span>Proficiency</span>
+                                <span class="skill-pct-text">95%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="--target-width: 95%;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2. CSS -->
+                    <div class="core-skill-card">
+                        <div class="skill-card-top">
+                            <div class="skill-icon-wrap css-icon-wrap">
+                                <i class="fa-brands fa-css3-alt"></i>
+                            </div>
+                            <div class="skill-meta">
+                                <h3>CSS</h3>
+                                <span class="skill-badge-level">Advanced</span>
+                            </div>
+                        </div>
+                        <p class="skill-card-desc">
+                            Modern styling with CSS Grid, Flexbox, responsive design, animations, variables, and cross-browser layouts.
+                        </p>
+                        <div class="skill-bar-wrap">
+                            <div class="skill-bar-info">
+                                <span>Proficiency</span>
+                                <span class="skill-pct-text">90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="--target-width: 90%;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3. JavaScript -->
+                    <div class="core-skill-card">
+                        <div class="skill-card-top">
+                            <div class="skill-icon-wrap js-icon-wrap">
+                                <i class="fa-brands fa-js"></i>
+                            </div>
+                            <div class="skill-meta">
+                                <h3>JavaScript</h3>
+                                <span class="skill-badge-level">Proficient</span>
+                            </div>
+                        </div>
+                        <p class="skill-card-desc">
+                            DOM manipulation, modern ES6+ syntax, asynchronous programming, interactive widgets, and dynamic applications.
+                        </p>
+                        <div class="skill-bar-wrap">
+                            <div class="skill-bar-info">
+                                <span>Proficiency</span>
+                                <span class="skill-pct-text">85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="--target-width: 85%;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 4. C Programming -->
+                    <div class="core-skill-card">
+                        <div class="skill-card-top">
+                            <div class="skill-icon-wrap c-icon-wrap">
+                                <i class="fa-solid fa-microchip"></i>
+                            </div>
+                            <div class="skill-meta">
+                                <h3>C Programming</h3>
+                                <span class="skill-badge-level">Proficient</span>
+                            </div>
+                        </div>
+                        <p class="skill-card-desc">
+                            Structured programming, memory management, pointers, data structures, and algorithmic logic implementation.
+                        </p>
+                        <div class="skill-bar-wrap">
+                            <div class="skill-bar-info">
+                                <span>Proficiency</span>
+                                <span class="skill-pct-text">88%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="--target-width: 88%;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 5. UI/UX Designing -->
+                    <div class="core-skill-card">
+                        <div class="skill-card-top">
+                            <div class="skill-icon-wrap design-icon-wrap">
+                                <i class="fa-solid fa-bezier-curve"></i>
+                            </div>
+                            <div class="skill-meta">
+                                <h3>UI/UX Designing</h3>
+                                <span class="skill-badge-level">Experienced</span>
+                            </div>
+                        </div>
+                        <p class="skill-card-desc">
+                            User experience design, wireframing, layout hierarchy, color theory, design systems, and intuitive interfaces.
+                        </p>
+                        <div class="skill-bar-wrap">
+                            <div class="skill-bar-info">
+                                <span>Proficiency</span>
+                                <span class="skill-pct-text">85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="--target-width: 85%;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 6. Web Development -->
+                    <div class="core-skill-card">
+                        <div class="skill-card-top">
+                            <div class="skill-icon-wrap web-icon-wrap">
+                                <i class="fa-solid fa-laptop-code"></i>
+                            </div>
+                            <div class="skill-meta">
+                                <h3>Web Development</h3>
+                                <span class="skill-badge-level">Advanced</span>
+                            </div>
+                        </div>
+                        <p class="skill-card-desc">
+                            Building fast, responsive, and mobile-friendly websites with clean architecture and seamless usability.
+                        </p>
+                        <div class="skill-bar-wrap">
+                            <div class="skill-bar-info">
+                                <span>Proficiency</span>
+                                <span class="skill-pct-text">92%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="--target-width: 92%;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECTS SECTION (KrishAI, Snapshot, Calculator) -->
+        <section class="section projects" id="projects">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag"><i class="fa-solid fa-rocket"></i> Portfolio Showcase</span>
+                    <h2 class="section-title">Featured <span class="gradient-text">Projects</span></h2>
+                    <p class="section-subtitle">Real-world live applications built and deployed by Dileep Kumar</p>
+                </div>
+
+                <!-- Filter Buttons for the 3 Projects -->
+                <div class="projects-filter">
+                    <button class="filter-btn active" data-filter="all">All (3)</button>
+                    <button class="filter-btn" data-filter="webdev">Web Development</button>
+                    <button class="filter-btn" data-filter="uiux">UI/UX Designing</button>
+                    <button class="filter-btn" data-filter="js">JavaScript</button>
+                </div>
+
+                <!-- Projects Grid (Exactly 3 Projects with Clickable Links) -->
+                <div class="projects-grid-three">
+                    
+                    <!-- PROJECT 1: KrishAI -->
+                    <div class="project-card" data-category="webdev uiux js">
+                        <a href="https://krishai-ppmmuept.manus.space/" target="_blank" rel="noopener noreferrer" class="project-img-box" aria-label="Open KrishAI Live Demo">
+                            <!-- AI Chatbot Mockup -->
+                            <div class="project-mockup mockup-chatbot">
+                                <div class="mockup-header">
+                                    <span class="mockup-dot"></span><span class="mockup-dot"></span><span class="mockup-dot"></span>
+                                    <span class="mockup-url">krishai-ppmmuept.manus.space</span>
+                                </div>
+                                <div class="mockup-body chat-mockup-body">
+                                    <div class="chat-bubble chat-bubble-ai">
+                                        <i class="fa-solid fa-robot"></i>
+                                        <span>Hello! How can I assist you today?</span>
+                                    </div>
+                                    <div class="chat-bubble chat-bubble-user">
+                                        <span>Show me your latest live projects.</span>
+                                    </div>
+                                    <div class="chat-input-bar">
+                                        <span class="chat-input-placeholder">Ask KrishAI anything...</span>
+                                        <i class="fa-solid fa-paper-plane chat-send-icon"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="project-badge">Live AI App</div>
+                        </a>
+                        <div class="project-content">
+                            <div class="project-tags">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>JavaScript</span>
+                                <span>Web Development</span>
+                            </div>
+                            <h3 class="project-title">
+                                <a href="https://krishai-ppmmuept.manus.space/" target="_blank" rel="noopener noreferrer" class="project-title-link">
+                                    KrishAI <i class="fa-solid fa-arrow-up-right-from-square title-ext-icon"></i>
+                                </a>
+                            </h3>
+                            <p class="project-desc">
+                                An intelligent conversational AI chatbot web application built with responsive messaging UI, 
+                                real-time response generation, and an intuitive modern interface.
+                            </p>
+                            <div class="project-links">
+                                <a href="https://github.com/saykrish" target="_blank" rel="noopener noreferrer" class="p-link" title="GitHub Repository">
+                                    <i class="fa-brands fa-github"></i> <span>Code</span>
+                                </a>
+                                <a href="https://krishai-ppmmuept.manus.space/" target="_blank" rel="noopener noreferrer" class="p-link p-link-primary" title="Launch KrishAI Live Demo">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i> <span>Live Demo</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PROJECT 2: Snapshot -->
+                    <div class="project-card" data-category="uiux webdev js">
+                        <a href="https://saykrish.github.io/CodeAlpha_ImageGallery/" target="_blank" rel="noopener noreferrer" class="project-img-box" aria-label="Open Snapshot Image Gallery Live Demo">
+                            <!-- Image Gallery Mockup -->
+                            <div class="project-mockup mockup-gallery">
+                                <div class="mockup-header">
+                                    <span class="mockup-dot"></span><span class="mockup-dot"></span><span class="mockup-dot"></span>
+                                    <span class="mockup-url">saykrish.github.io/CodeAlpha_ImageGallery</span>
+                                </div>
+                                <div class="mockup-body gallery-mockup-body">
+                                    <div class="gallery-filter-chips">
+                                        <span class="g-chip active">All</span>
+                                        <span class="g-chip">Nature</span>
+                                        <span class="g-chip">Architecture</span>
+                                    </div>
+                                    <div class="gallery-photo-grid">
+                                        <div class="g-photo-tile p1"><i class="fa-solid fa-image"></i></div>
+                                        <div class="g-photo-tile p2"><i class="fa-solid fa-camera"></i></div>
+                                        <div class="g-photo-tile p3"><i class="fa-solid fa-mountain-sun"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="project-badge">Live Gallery</div>
+                        </a>
+                        <div class="project-content">
+                            <div class="project-tags">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>JavaScript</span>
+                                <span>UI/UX Designing</span>
+                            </div>
+                            <h3 class="project-title">
+                                <a href="https://saykrish.github.io/CodeAlpha_ImageGallery/" target="_blank" rel="noopener noreferrer" class="project-title-link">
+                                    Snapshot <i class="fa-solid fa-arrow-up-right-from-square title-ext-icon"></i>
+                                </a>
+                            </h3>
+                            <p class="project-desc">
+                                A modern responsive photo gallery application featuring interactive category filtering, 
+                                full-screen lightbox modal preview, smooth hover zoom effects, and responsive CSS grid.
+                            </p>
+                            <div class="project-links">
+                                <a href="https://github.com/saykrish/CodeAlpha_ImageGallery" target="_blank" rel="noopener noreferrer" class="p-link" title="Source Code on GitHub">
+                                    <i class="fa-brands fa-github"></i> <span>Code</span>
+                                </a>
+                                <a href="https://saykrish.github.io/CodeAlpha_ImageGallery/" target="_blank" rel="noopener noreferrer" class="p-link p-link-primary" title="Launch Snapshot Live Demo">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i> <span>Live Demo</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PROJECT 3: Calculator -->
+                    <div class="project-card" data-category="webdev js">
+                        <a href="https://saykrish.github.io/Codealpha_Calculator/" target="_blank" rel="noopener noreferrer" class="project-img-box" aria-label="Open Calculator Live Demo">
+                            <!-- Calculator Mockup -->
+                            <div class="project-mockup mockup-calculator">
+                                <div class="mockup-header">
+                                    <span class="mockup-dot"></span><span class="mockup-dot"></span><span class="mockup-dot"></span>
+                                    <span class="mockup-url">saykrish.github.io/Codealpha_Calculator</span>
+                                </div>
+                                <div class="mockup-body calc-mockup-body">
+                                    <div class="calc-screen">
+                                        <span class="calc-formula">25 &times; 8 =</span>
+                                        <span class="calc-total">200</span>
+                                    </div>
+                                    <div class="calc-keypad-preview">
+                                        <span class="calc-key c-op">C</span>
+                                        <span class="calc-key c-op">&divide;</span>
+                                        <span class="calc-key c-op">&times;</span>
+                                        <span class="calc-key c-eq">=</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="project-badge">Live Tool</div>
+                        </a>
+                        <div class="project-content">
+                            <div class="project-tags">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>JavaScript</span>
+                                <span>Web Development</span>
+                            </div>
+                            <h3 class="project-title">
+                                <a href="https://saykrish.github.io/Codealpha_Calculator/" target="_blank" rel="noopener noreferrer" class="project-title-link">
+                                    Calculator <i class="fa-solid fa-arrow-up-right-from-square title-ext-icon"></i>
+                                </a>
+                            </h3>
+                            <p class="project-desc">
+                                A sleek interactive digital calculator web app supporting fundamental arithmetic operations, 
+                                decimal accuracy, clear &amp; backspace handlers, and tactile button micro-interactions.
+                            </p>
+                            <div class="project-links">
+                                <a href="https://github.com/saykrish/Codealpha_Calculator" target="_blank" rel="noopener noreferrer" class="p-link" title="Source Code on GitHub">
+                                    <i class="fa-brands fa-github"></i> <span>Code</span>
+                                </a>
+                                <a href="https://saykrish.github.io/Codealpha_Calculator/" target="_blank" rel="noopener noreferrer" class="p-link p-link-primary" title="Launch Calculator Live Demo">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i> <span>Live Demo</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICES SECTION -->
+        <section class="section services" id="services">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag"><i class="fa-solid fa-cubes"></i> What I Provide</span>
+                    <h2 class="section-title">My <span class="gradient-text">Services</span></h2>
+                    <p class="section-subtitle">Delivering high quality solutions tailored for users and businesses</p>
+                </div>
+
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fa-solid fa-laptop-code"></i></div>
+                        <h3 class="service-title">Frontend Development</h3>
+                        <p class="service-desc">
+                            Building modern, responsive, and pixel-perfect client-side web applications using semantic HTML5, 
+                            modern CSS3, and dynamic interactive JavaScript.
+                        </p>
+                        <ul class="service-features">
+                            <li><i class="fa-solid fa-check"></i> Semantic &amp; modular code structure</li>
+                            <li><i class="fa-solid fa-check"></i> Dynamic DOM &amp; state manipulation</li>
+                            <li><i class="fa-solid fa-check"></i> High performance &amp; accessibility</li>
+                        </ul>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fa-solid fa-pen-nib"></i></div>
+                        <h3 class="service-title">UI/UX Designing</h3>
+                        <p class="service-desc">
+                            Designing clear visual hierarchies, user journeys, and wireframes that transform ideas 
+                            into engaging, enjoyable user interfaces.
+                        </p>
+                        <ul class="service-features">
+                            <li><i class="fa-solid fa-check"></i> Clean layout wireframing</li>
+                            <li><i class="fa-solid fa-check"></i> User-centered interface flows</li>
+                            <li><i class="fa-solid fa-check"></i> Consistent visual design</li>
+                        </ul>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fa-solid fa-globe"></i></div>
+                        <h3 class="service-title">Web Development</h3>
+                        <p class="service-desc">
+                            Crafting clean, accessible, and standards-compliant websites using semantic HTML, 
+                            modern CSS, and responsive JavaScript.
+                        </p>
+                        <ul class="service-features">
+                            <li><i class="fa-solid fa-check"></i> Semantic HTML5 architecture</li>
+                            <li><i class="fa-solid fa-check"></i> Interactive JavaScript logic</li>
+                            <li><i class="fa-solid fa-check"></i> Cross-browser testing</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section class="section contact" id="contact">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag"><i class="fa-solid fa-envelope-open-text"></i> Start A Conversation</span>
+                    <h2 class="section-title">Get In <span class="gradient-text">Touch</span></h2>
+                    <p class="section-subtitle">Have a project, internship, or freelance opportunity in mind? Let's connect!</p>
+                </div>
+
+                <div class="contact-wrapper">
+                    <!-- Left Column: Contact Cards & Info -->
+                    <div class="contact-info-col">
+                        <div class="contact-intro-card">
+                            <h3>Let's talk about your next project!</h3>
+                            <p>
+                                I'm actively seeking opportunities as a <strong>Web Developer</strong> or <strong>UI/UX Designer</strong>. 
+                                Feel free to reach out via email or connect with me on GitHub. I respond promptly!
+                            </p>
+                        </div>
+
+                        <div class="contact-cards-list">
+                            <!-- Email Card (Clickable mailto) -->
+                            <div class="contact-channel-card">
+                                <div class="channel-icon email-bg">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </div>
+                                <div class="channel-details">
+                                    <span class="channel-title">Direct Email</span>
+                                    <a href="mailto:featdilip@gmail.com" class="channel-value" title="Send email">featdilip@gmail.com</a>
+                                </div>
+                                <button class="channel-action-btn copy-btn" data-copy="featdilip@gmail.com" title="Copy Email">
+                                    <i class="fa-regular fa-copy"></i>
+                                </button>
+                            </div>
+
+                            <!-- GitHub Card (Clickable) -->
+                            <div class="contact-channel-card">
+                                <div class="channel-icon github-bg">
+                                    <i class="fa-brands fa-github"></i>
+                                </div>
+                                <div class="channel-details">
+                                    <span class="channel-title">GitHub Profile</span>
+                                    <a href="https://github.com/saykrish" target="_blank" rel="noopener noreferrer" class="channel-value" title="Open GitHub Profile">github.com/saykrish</a>
+                                </div>
+                                <a href="https://github.com/saykrish" target="_blank" rel="noopener noreferrer" class="channel-action-btn" title="Open GitHub">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                </a>
+                            </div>
+
+                            <!-- Academic / Degree Card -->
+                            <div class="contact-channel-card">
+                                <div class="channel-icon degree-bg">
+                                    <i class="fa-solid fa-graduation-cap"></i>
+                                </div>
+                                <div class="channel-details">
+                                    <span class="channel-title">Academic Background</span>
+                                    <span class="channel-value">B.Tech Computer Science &amp; Engineering</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Direct Socials -->
+                        <div class="contact-socials-box">
+                            <h4>Find me across the web:</h4>
+                            <div class="social-links-grid">
+                                <a href="mailto:featdilip@gmail.com" class="social-tile" title="Email: featdilip@gmail.com">
+                                    <i class="fa-solid fa-envelope"></i>
+                                    <span>Email</span>
+                                </a>
+                                <a href="https://github.com/saykrish" target="_blank" rel="noopener noreferrer" class="social-tile" title="GitHub: saykrish">
+                                    <i class="fa-brands fa-github"></i>
+                                    <span>GitHub</span>
+                                </a>
+                                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-tile" title="LinkedIn Profile">
+                                    <i class="fa-brands fa-linkedin-in"></i>
+                                    <span>LinkedIn</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Interactive Form -->
+                    <div class="contact-form-col">
+                        <div class="form-card">
+                            <h3 class="form-title"><i class="fa-solid fa-paper-plane"></i> Send Me a Message</h3>
+                            <p class="form-subtitle">Fill in the fields below and I'll get back to you within 24 hours.</p>
+
+                            <form id="contact-form" class="contact-form" novalidate>
+                                <div class="form-group">
+                                    <label for="name">Your Name <span class="required">*</span></label>
+                                    <div class="input-wrapper">
+                                        <i class="fa-solid fa-user input-icon"></i>
+                                        <input type="text" id="name" name="name" placeholder="e.g. Rahul Sharma" required>
+                                    </div>
+                                    <span class="error-msg" id="name-error">Please enter your name</span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="email">Your Email Address <span class="required">*</span></label>
+                                    <div class="input-wrapper">
+                                        <i class="fa-solid fa-envelope input-icon"></i>
+                                        <input type="email" id="email" name="email" placeholder="e.g. rahul@example.com" required>
+                                    </div>
+                                    <span class="error-msg" id="email-error">Please enter a valid email address</span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="subject">Subject <span class="required">*</span></label>
+                                    <div class="input-wrapper">
+                                        <i class="fa-solid fa-tag input-icon"></i>
+                                        <input type="text" id="subject" name="subject" placeholder="Project Inquiry / Job Opportunity" required>
+                                    </div>
+                                    <span class="error-msg" id="subject-error">Please enter a subject</span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="message">Your Message <span class="required">*</span></label>
+                                    <div class="input-wrapper textarea-wrapper">
+                                        <i class="fa-solid fa-message input-icon"></i>
+                                        <textarea id="message" name="message" rows="5" placeholder="Hi Dileep, I checked your work on dileep.dev and would love to collaborate..." required></textarea>
+                                    </div>
+                                    <span class="error-msg" id="message-error">Please enter your message (at least 10 characters)</span>
+                                </div>
+
+                                <button type="submit" class="btn btn-primary btn-block submit-btn" id="submit-btn">
+                                    <span class="btn-text">Send Message</span>
+                                    <i class="fa-solid fa-paper-plane btn-icon"></i>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <!-- Modern dileep.dev Branding in Footer -->
+                    <a href="#home" class="brand-logo" aria-label="dileep.dev home">
+                        <div class="logo-icon-pill">
+                            <i class="fa-solid fa-code"></i>
+                        </div>
+                        <div class="logo-text-box">
+                            <span class="brand-title">dileep<span class="logo-dot">.</span><span class="logo-ext">dev</span></span>
+                        </div>
+                    </a>
+                    <p class="footer-bio">
+                        Frontend Developer &amp; UI/UX Designer. Focused on HTML, CSS, JavaScript, C Programming, UI/UX Designing, and Web Development.
+                    </p>
+                </div>
+
+                <div class="footer-links-col">
+                    <h5 class="footer-col-title">Navigation</h5>
+                    <ul class="footer-nav">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links-col">
+                    <h5 class="footer-col-title">Get In Touch</h5>
+                    <ul class="footer-contact-info">
+                        <li>
+                            <i class="fa-solid fa-envelope"></i> 
+                            <a href="mailto:featdilip@gmail.com" class="footer-link">featdilip@gmail.com</a>
+                        </li>
+                        <li>
+                            <i class="fa-brands fa-github"></i> 
+                            <a href="https://github.com/saykrish" target="_blank" rel="noopener noreferrer" class="footer-link">github.com/saykrish</a>
+                        </li>
+                        <li><i class="fa-solid fa-graduation-cap"></i> B.Tech CSE</li>
+                        <li><i class="fa-solid fa-earth-americas"></i> India (Open for Remote)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="copyright">
+                    &copy; <span id="current-year"></span> <strong>dileep.dev</strong> &bull; Dileep Kumar. All Rights Reserved. 
+                    <span class="task-badge">CodeAlpha Task 3: Portfolio Site</span>
+                </p>
+                <div class="footer-socials">
+                    <a href="mailto:featdilip@gmail.com" title="Email: featdilip@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+                    <a href="https://github.com/saykrish" target="_blank" rel="noopener noreferrer" title="GitHub: saykrish"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top" title="Scroll to top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <!-- Custom JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>
